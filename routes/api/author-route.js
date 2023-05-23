@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Author, Post } = require('../../models');
+const { Author, Post, Comment } = require('../../models');
 
 // The `/api/author` endpoint
 
@@ -8,8 +8,8 @@ router.get('/', (req, res) => {
   // be sure to include its associated Post
   Author.findAll({ include: Post
 })
-  .then((postData) => {
-    res.status(200).json(postData);
+  .then((authorData) => {
+    res.status(200).json(authorData);
   })
   .catch((err) => {
     console.log(err);
@@ -23,8 +23,8 @@ router.get('/:id', (req, res) => {
   // be sure to include its associated Posts
   Author.findOne({ where: { id: req.params.id }, include: Post   
 })
-  .then((postData) => {
-    res.status(200).json(postData);
+  .then((authorData) => {
+    res.status(200).json(authorData);
   })
   .catch((err) => {
     console.log(err);
