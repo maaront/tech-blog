@@ -7,21 +7,25 @@ const Comment = require('./Comment');
 // Comment belongsTo Post
   Comment.belongsTo(Post, {
     foreignKey: 'post_id',
-    
   });
 
-// Categories have many Products
 // Post have many Comments
   Post.hasMany(Comment, {
     foreignKey: 'post_id',
     onDelete: 'CASCADE',
   });
 
-// Categories have many Products
-// Post has one Author
-Post.hasOne(Author, {
+// Post belongsTo Author
+Post.belongsTo(Author, {
     foreignKey: 'post_id',
   });
+
+// Author have many Posts
+Author.hasMany(Post, {
+    foreignKey: 'author_id',
+    onDelete: 'CASCADE',
+  });
+
 
 module.exports = {
   Author,
