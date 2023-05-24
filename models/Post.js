@@ -1,7 +1,7 @@
 // import important parts of sequelize library
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes } = require("sequelize");
 // import our database connection from config.js
-const sequelize = require('../config/connection');
+const sequelize = require("../config/connection");
 
 // Initialize Post model (table) by extending off Sequelize's Model class
 class Post extends Model {}
@@ -10,32 +10,33 @@ class Post extends Model {}
 Post.init(
   {
     id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        autoIncrement: true,
-  },
-  post_title: {
-    type: DataTypes.STRING,
-    allowNull: false,
-},
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    post_title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: "New Post",
+    },
     post_body: {
-        type: DataTypes.STRING(1000),
-        allowNull: false,
+      type: DataTypes.STRING(1000),
+      allowNull: false,
     },
     author_id: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: 'author',
-            key: 'id',
-        },
-    },  
-},
+      type: DataTypes.INTEGER,
+      references: {
+        model: "author",
+        key: "id",
+      },
+    },
+  },
   {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'post',
+    modelName: "post",
   }
 );
 

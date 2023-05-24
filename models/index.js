@@ -12,7 +12,6 @@ const Comment = require('./Comment');
 // Post have many Comments
   Post.hasMany(Comment, {
     foreignKey: 'post_id',
-    onDelete: 'CASCADE',
   });
 
 // Post belongsTo Author
@@ -23,7 +22,6 @@ Post.belongsTo(Author, {
 // Author have many Posts
 Author.hasMany(Post, {
     foreignKey: 'author_id',
-    onDelete: 'CASCADE',
   });
 
 

@@ -35,7 +35,7 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
   // create a new comment
-  Comment.create({ comment_body: req.body.comment_body })
+  Comment.create({ comment_body: req.body.comment_body, post_id: req.body.post_id, author_id: req.body.author_id })
     .then((commentData) => {
       res.status(200).json(commentData);
     })
