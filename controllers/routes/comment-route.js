@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Comment, Post, Author } = require('../models');
+const { Comment, Post, Author } = require('../../models');
 
 // The `/api/comment` endpoint
 

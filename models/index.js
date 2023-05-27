@@ -1,7 +1,7 @@
 // import models
-const Author = require('./Author');
-const Post = require('./Post');
-const Comment = require('./Comment');
+const Author = require('./Author.js');
+const Post = require('./Post.js');
+const Comment = require('./Comment.js');
 
 
 // Comment belongsTo Post
