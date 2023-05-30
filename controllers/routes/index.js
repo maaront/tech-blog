@@ -2,7 +2,7 @@ const router = require('express').Router();
 const authorRoutes = require('./author-route');
 const commentRoutes = require('./comment-route');
 const postRoutes = require('./post-route');
-const listingRoutes = require('../listingCont.js')
+const listingRoutes = require('./listingCont.js')
 
 
 router.use('/authors', authorRoutes);

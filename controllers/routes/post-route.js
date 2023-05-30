@@ -4,18 +4,19 @@ const { Author, Post, Comment } = require('../../models');
 // The `/post` endpoint
 
 router.get('/', (req, res) => {
-  // find all posts
-  // be sure to include its associated Author and Comments
-  Post.findAll({ include: Author, Comment
-})
-  .then((postData) => {
-    res.status(200).json(postData);
+  Post.findAll({ 
+    include: [Author, Comment]
   })
-  .catch((err) => {
-    console.log(err);
-    res.status(500).json(err);
-});
-});
+ .then((postData) => {
+  const posts = postData.map(post => post.get({ plain: true }));
+
+  console.log(posts);
+  console.log(postData);
+
+  res.render('../views/listing', { posts });
+})
+})
+
 
 
 router.get('/:id', (req, res) => {

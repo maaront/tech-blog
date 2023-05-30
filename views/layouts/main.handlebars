@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Title on main.handlebars</title>
-  {{!-- <link rel="stylesheet" href="/css/jass.css"> --}}
-</head>
+<html lang="en">  
+  <head>  
+    <meta charset="utf-8" />  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />    
+    <title>Techblog</title>  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />  
+    <link rel="stylesheet" type="text/css" href="./css/index.css" />  
+  </head>  
 
 <body>
-  <header class="display-flex justify-space-between align-center p-2">
+  <header class="header">
     <h1>
-      This is a header on main.handlebars
+      Tech Blog
     </h1>
     <!-- If logged in then show logout button -->
     {{!-- {{#if logged_in}}
@@ -20,11 +22,11 @@
     </nav>
     {{/if}} --}}
   </header>
-  <main class="container container-fluid mt-5">
+  <main class="">
     {{{ body }}}
   </main>
   <footer>
-      
+      <p>www.techblog.com</p>
   </footer>
 
   <!-- TODO: Add a comment describing the functionality of this helper -->
