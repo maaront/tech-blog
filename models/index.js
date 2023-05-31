@@ -2,6 +2,7 @@
 const Author = require('./Author.js');
 const Post = require('./Post.js');
 const Comment = require('./Comment.js');
+const PostComment = require('./PostComment.js');
 
 
 // Comment belongsTo Post
@@ -29,4 +30,5 @@ module.exports = {
   Author,
   Post,
   Comment,
+  PostComment,
 };
