@@ -6,7 +6,7 @@
       <p>{{post.post_body}}</p>
       <ul>
         {{#each post.comments as |comment|}}
-          <li>{{comment.text}}</li>
+          <p>{{comment.comment_body}}</p>
         {{/each}}
       </ul>
     </div>

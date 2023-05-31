@@ -19,7 +19,11 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   // find one post by its `id` value
   // be sure to include its associated Author and Comments
-  Post.findOne({ where: { id: req.params.id }, include: Author, Comment})
+  Post.findOne({ where: { id: req.params.id }, include: [
+    {
+      model: Comment,
+    },
+  ],})
   .then((postData) => {
     const post = postData.get({ plain : true });
 
