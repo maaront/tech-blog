@@ -10,10 +10,7 @@ router.get('/', (req, res) => {
  .then((postData) => {
   const posts = postData.map(post => post.get({ plain: true }));
 
-  console.log(posts);
-  console.log(postData);
-
-  res.render('../views/listing', { posts });
+  res.render('./listing', { posts });
 })
 })
 
@@ -22,10 +19,13 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   // find one post by its `id` value
   // be sure to include its associated Author and Comments
-  Post.findOne({ where: { id: req.params.id }, include: Author, Comment
-})
+  Post.findOne({ where: { id: req.params.id }, include: Author, Comment})
   .then((postData) => {
-    res.status(200).json(postData);
+    const post = postData.get({ plain : true });
+
+    res.status(200).render('single-post', {
+      post
+    });
   })
   .catch((err) => {
     console.log(err);
