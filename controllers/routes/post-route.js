@@ -23,6 +23,9 @@ router.get('/:id', (req, res) => {
     {
       model: Comment,
     },
+    {
+      model: Author,
+    }
   ],})
   .then((postData) => {
     const post = postData.get({ plain : true });

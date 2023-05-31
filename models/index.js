@@ -2,7 +2,7 @@
 const Author = require('./Author.js');
 const Post = require('./Post.js');
 const Comment = require('./Comment.js');
-const PostComment = require('./PostComment.js');
+
 
 
 // Comment belongsTo Post
@@ -17,7 +17,7 @@ const PostComment = require('./PostComment.js');
 
 // Post belongsTo Author
 Post.belongsTo(Author, {
-    foreignKey: 'post_id',
+    foreignKey: 'author_id',
   });
 
 // Author have many Posts
@@ -30,5 +30,4 @@ module.exports = {
   Author,
   Post,
   Comment,
-  PostComment,
 };

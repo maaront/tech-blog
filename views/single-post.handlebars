@@ -2,7 +2,7 @@
   <div>
     <div>
       <h2> {{post.post_title}} </h2>
-      <p></p>
+      <p>{{post.author.user_name}}</p>
       <p>{{post.post_body}}</p>
       <ul>
         {{#each post.comments as |comment|}}
