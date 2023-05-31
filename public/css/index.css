@@ -20,7 +20,8 @@ body {
 
 }
 
-.blog-post {
+.blog-post > div {
+    padding: 100px, 0;
     
 }
 

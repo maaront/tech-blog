@@ -41,15 +41,15 @@ router.get('/:id', (req, res) => {
 });
 });
 
-router.post('/', (req, res) => {
+router.post('/posts', (req, res) => {
   // create a new Post
   Post.create({ post_title: req.body.post_title, post_body: req.body.post_body, author_id: req.body.author_id })
     .then((postData) => {
-      res.status(200).json(postData);
+      res.status(200).json({message: 'Post created' }, postData);
     })
     .catch((err) => {
       console.log(err);
-      res.status(500).json(err);
+      res.status(500).json({message: 'Internal server error' });
   
   });
   });
